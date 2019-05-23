@@ -48,7 +48,7 @@ if test "${docker_optimizations}" = "on"; then setenv bootargs "${bootargs} cgro
 load ${devtype} ${devnum} ${ramdisk_addr_r} ${prefix}uInitrd
 load ${devtype} ${devnum} ${kernel_addr_r} ${prefix}zImage
 
-if test -e ${devtype} ${devnum} "${prefix}.next"; then
+if test -e ${devtype} ${devnum} ${prefix}.next; then
 	echo "Found mainline kernel configuration"
 	load ${devtype} ${devnum} ${fdt_addr_r} ${prefix}dtb/${fdtfile}
 	fdt addr ${fdt_addr_r}
